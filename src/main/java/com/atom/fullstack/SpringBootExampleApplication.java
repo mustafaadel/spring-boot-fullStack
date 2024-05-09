@@ -2,6 +2,7 @@ package com.atom.fullstack;
 
 import com.atom.fullstack.customer.Customer;
 import com.atom.fullstack.customer.CustomerRepository;
+import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,18 +19,14 @@ public class SpringBootExampleApplication {
 	@Bean
 	CommandLineRunner runner(CustomerRepository customerRepository){
 		return args -> {
-			Customer James = Customer.builder()
-					.name("James")
-					.email("james@email.com")
-					.age(21)
+			Faker faker = new Faker();
+			Customer customer = Customer.builder()
+					.name(faker.name().fullName())
+					.email(faker.internet().emailAddress())
+					.age(faker.number().numberBetween(18, 60))
 					.build();
-			Customer Maria = Customer.builder()
-					.name("Maria")
-					.email("maria@email.com")
-					.age(23)
-					.build();
-			List<Customer> customers = List.of(James, Maria);
-			//customerRepository.saveAll(customers);
+
+			customerRepository.save(customer);
 		};
 	}
 }
