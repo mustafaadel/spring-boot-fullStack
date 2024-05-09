@@ -10,11 +10,15 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class CustomerService {
-    @Qualifier("jpa")
+
+
     private final CustomerDao customerDao;
+
+    public CustomerService(@Qualifier("jdbc")CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
 
     public List<Customer> getAllCustomers(){
         log.info("Fetching all customers");
