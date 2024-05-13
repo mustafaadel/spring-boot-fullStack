@@ -13,7 +13,6 @@ import java.util.List;
 @Slf4j
 public class CustomerService {
 
-
     private final CustomerDao customerDao;
 
     public CustomerService(@Qualifier("jdbc")CustomerDao customerDao) {
