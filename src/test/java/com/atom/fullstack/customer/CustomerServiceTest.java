@@ -104,9 +104,42 @@ class CustomerServiceTest {
 
     @Test
     void deleteCustomer() {
+        // Given
+        Long id = 1L;
+        when(customerDao.existsCustomerById(id)).thenReturn(true);
+        // When
+        underTest.deleteCustomer(id);
+        // Then
+        verify(customerDao).deleteCustomer(id);
+    }
+    @Test
+    void willThrowDeleteCustomerByIdWhenIdNotExists(){
+        // Given
+        Long id = 1L;
+        when(customerDao.existsCustomerById(id)).thenReturn(false);
+        // When
+        //underTest.deleteCustomer(id);
+        // Then
+        assertThatThrownBy(() -> underTest.deleteCustomer(id))
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessage("Customer " + id + " does not exist");
+        verify(customerDao, Mockito.never()).deleteCustomer(id);
     }
 
     @Test
     void updateCustomer() {
+        Long id = 1L;
+        Customer customer = new Customer(id, "name", "email", 20);
+        when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
+        CustomerUpdateRequest updateRequest = new CustomerUpdateRequest("new name", "new email", 30);
+        when(customerDao.existsCustomerByEmail(updateRequest.email())).thenReturn(false);
+        underTest.updateCustomer(id, updateRequest);
+        ArgumentCaptor<Customer> customerArgumentCaptor = ArgumentCaptor.forClass(Customer.class);
+        verify(customerDao).updateCustomer(customerArgumentCaptor.capture());
+        Customer capturedCustomer = customerArgumentCaptor.getValue();
+        assertThat(capturedCustomer.getId()).isEqualTo(id);
+        assertThat(capturedCustomer.getAge()).isEqualTo(updateRequest.age());
+        assertThat(capturedCustomer.getName()).isEqualTo(updateRequest.name());
+        assertThat(capturedCustomer.getEmail()).isEqualTo(updateRequest.email());
     }
 }
