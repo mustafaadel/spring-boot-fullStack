@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ea3fa8c-8a93-4268-bbe7-8c606ae99ec8" name="Changes" comment="modify gitignore">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="4ea3fa8c-8a93-4268-bbe7-8c606ae99ec8" name="Changes" comment="Add git workflows">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/backend-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/backend-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +137,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.33367452",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -224,8 +225,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-boot-fullStack" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-boot-fullStack" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringBootExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="spring-boot-example" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="atom-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atom.fullstack.SpringBootExampleApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -245,6 +261,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.CustomerIntegrationTest" />
+      <item itemvalue="JUnit.CustomerIntegrationTest.canDeleteCustomer" />
+      <item itemvalue="JUnit.CustomerIntegrationTest.canRegisterCustomer" />
+      <item itemvalue="JUnit.CustomerIntegrationTest.canUpdateCustomer" />
+      <item itemvalue="Spring Boot.SpringBootExampleApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
@@ -278,6 +302,11 @@
       <workItem from="1716723831032" duration="3670000" />
       <workItem from="1716791663943" duration="7416000" />
       <workItem from="1716880543516" duration="5715000" />
+      <workItem from="1716893139736" duration="188000" />
+      <workItem from="1716894831573" duration="31000" />
+      <workItem from="1716894954511" duration="114000" />
+      <workItem from="1716895086856" duration="154000" />
+      <workItem from="1716895267232" duration="4132000" />
     </task>
     <task id="LOCAL-00001" summary="Add Java Faker and update ddl to validate">
       <option name="closed" value="true" />
@@ -343,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716891058000</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add git workflows">
+      <option name="closed" value="true" />
+      <created>1716898513110</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716898513110</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +394,8 @@
     <MESSAGE value="Adding Maven PLugins and configurations to split the unit testing from integration testing" />
     <MESSAGE value="Asserting customerList is not null." />
     <MESSAGE value="modify gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify gitignore" />
+    <MESSAGE value="Add git workflows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add git workflows" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/spring_boot_fullStack$CustomerServiceTest.ic" NAME="CustomerServiceTest Coverage Results" MODIFIED="1716103104984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
