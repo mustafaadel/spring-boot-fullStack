@@ -33,3 +33,6 @@ build/
 .vscode/
 
 backend/.mvn
+backend/mvnw
+backend/mvnw.cmd
+keypairs/
