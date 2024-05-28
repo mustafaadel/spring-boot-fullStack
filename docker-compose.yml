@@ -1,7 +1,7 @@
 services:
   db:
     container_name: postgresAmigos
-    image: postgres:14.1
+    image: postgres:16.2
     environment:
       POSTGRES_USER: atom
       POSTGRES_PASSWORD: Password
