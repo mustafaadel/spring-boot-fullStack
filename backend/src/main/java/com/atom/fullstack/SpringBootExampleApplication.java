@@ -13,6 +13,7 @@ public class SpringBootExampleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootExampleApplication.class, args);
+		
 	}
 	@Bean
 	CommandLineRunner runner(CustomerRepository customerRepository){
