@@ -4,7 +4,7 @@ services:
     image: postgres:14.1
     environment:
       POSTGRES_USER: atom
-      POSTGRES_PASSWORD: atom
+      POSTGRES_PASSWORD: Password
       PGDATA: /data/postgres
     volumes:
       - db:/data/postgres
@@ -14,6 +14,22 @@ services:
     networks:
       - db
     restart: unless-stopped
+
+  iatom-api:
+    container_name: iatom-api
+    image: iatom/atom-api:latest
+    environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/customers
+        - SPRING_DATASOURCE_USERNAME=atom
+        - SPRING_DATASOURCE_PASSWORD=Password
+    ports:
+      - "8088:8080"
+    networks:
+      - db
+    depends_on:
+      - db
+    restart: unless-stopped
+
 
 networks:
     db:
